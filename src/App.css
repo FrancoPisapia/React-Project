@@ -3,3 +3,8 @@
 .titulo{
   color: blue;
 }
+
+
+.margen-izq{
+  display: flex;
+}

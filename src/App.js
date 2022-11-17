@@ -1,12 +1,13 @@
 
 import './App.css'
+import CustomNav from './Componentes/CustomNav'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = ()=>{
   return(
     <>
-    <h1 className='titulo'>Óptica OF</h1>
-    <hr/>
-    <p>lorem</p>
+   <CustomNav />
+
     </>
     )
     
