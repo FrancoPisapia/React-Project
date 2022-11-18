@@ -5,6 +5,7 @@ import { FaShoppingCart } from 'react-icons/fa';
 
 
 const CustomNav = () =>{
+  let productosEnCarro =3
     return(
 
       <>
@@ -26,7 +27,7 @@ const CustomNav = () =>{
                   <Nav.Link href="#link" className='letraNegro'>Iniciar Sesion</Nav.Link>
                   <div>
                   <Nav.Link href="#link" className='letraNegro'><FaShoppingCart />
-                    <div className='popup'>0</div>
+                    <div className='popup'>{productosEnCarro}</div>
                   </Nav.Link>
                   
                   </div>
