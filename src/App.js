@@ -9,7 +9,8 @@ const App = ()=>{
   return(
     <>
    <CustomNav />
-    < ItemListContainer producto1 = 'Armazón Vintage' producto2 = 'Armazón Moretti ' producto3 = 'Lentes de sol Vintahr' producto4= 'Lentes de contacto Air Optix'/>
+    {/*< ItemListContainer producto1 = 'Armazón Vintage' producto2 = 'Armazón Moretti ' producto3 = 'Lentes de sol Vintahr' producto4= 'Lentes de contacto Air Optix'/>*/}
+    < ItemListContainer greeting = 'Cambia tu forma de ver'/>
     </>
     )
     

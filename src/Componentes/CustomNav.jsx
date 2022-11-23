@@ -1,11 +1,12 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import CartWidget from './CartWidget';
 import { FaShoppingCart } from 'react-icons/fa';
 
 
 const CustomNav = () =>{
-  let productosEnCarro =3
+
     return(
 
       <>
@@ -27,7 +28,7 @@ const CustomNav = () =>{
                   <Nav.Link href="#link" className='letraNegro'>Iniciar Sesion</Nav.Link>
                   <div>
                   <Nav.Link href="#link" className='letraNegro'><FaShoppingCart />
-                    <div className='popup'>{productosEnCarro}</div>
+                    <CartWidget />
                   </Nav.Link>
                   
                   </div>
