@@ -2,7 +2,7 @@
 const ItemListContainer = (prop) =>{
     return(
         <>
-        <div className="container">{prop.greeting}</div>
+        <h1 className="container">{prop.greeting}</h1>
         {/*<ul className="listaProductos">
         <li className="">{prop.producto1}</li>
         <li>{prop.producto2}</li>
