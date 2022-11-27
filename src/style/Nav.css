@@ -1,0 +1,33 @@
+
+.estiloNavBar{
+    background-color: rgba(105, 208, 246, 0.7) !important;
+  
+    
+  }
+  .letraNegro{
+    color: black;
+  }
+  
+  .margen-der{
+    display: flex;
+    gap: 20px;
+    position: absolute;
+    right: 25px;
+    
+  }
+  
+
+.popup{
+    position: relative;
+    top: -32px;
+    left: 15px;
+  
+    background-color: rgba(215, 40, 162, 0.723);
+    text-align: center;
+    margin-right: 5px;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    border-radius: 50%;
+  }
+  
