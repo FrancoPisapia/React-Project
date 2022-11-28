@@ -1,4 +1,7 @@
 .tamañoFoto {
-  width: 260px;
-  height: 280px;
+  height: 150px;
+}
+
+.imagenCentrada{
+  margin: 5px 10px;
 }
