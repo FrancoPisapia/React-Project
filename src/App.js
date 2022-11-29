@@ -6,12 +6,13 @@ import './App.css';
 import './style/Nav.css';
 import './style/ListaProductos.css'
 import './style/productos.css'
+import ItemDetailCointainer from './Componentes/ItemDetailCointainer'
 const App = ()=>{
   return(
     <>
    <CustomNav />
-    {/*< ItemListContainer producto1 = 'Armazón Vintage' producto2 = 'Armazón Moretti ' producto3 = 'Lentes de sol Vintahr' producto4= 'Lentes de contacto Air Optix'/>*/}
-    < ItemListContainer greeting = 'Cambia tu forma de ver'/>
+  < ItemListContainer greeting = 'Cambia tu forma de ver'/> 
+  <ItemDetailCointainer/>
     </>
     )
     

@@ -1,15 +1,13 @@
 import {useState, useEffect} from 'react';
-import ItemList from './ItemList'
 import fetchData from '../utils/fetchData'
-import {data} from '../utils/data' 
+import {data} from '../utils/data'
+import ItemDetail from '../Componentes/ItemDetail'
 
-const ItemListContainer = (prop) =>{
+const ItemDetailCointainer = (props) =>{
 
     const [datos, setDatos] = useState ([])
 
 
-
-    //ComponentDidMount
     useEffect(()=>{
         //Consulta a la Base de dats
         fetchData (2000, data)
@@ -19,16 +17,12 @@ const ItemListContainer = (prop) =>{
 
 
     return(
-        <>
-        <h1 className="container">{prop.greeting}</h1>
+
         <div className='container'>
-            <div className='row separacionTarjetas'>
-                <ItemList datos={datos} />
-            </div>
+            <ItemDetail datos ={datos}/>
         </div>
-        </>
-    )
+)
+           
 }
 
-
-export default  ItemListContainer;
+export default ItemDetailCointainer 
