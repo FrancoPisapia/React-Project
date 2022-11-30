@@ -5,3 +5,18 @@
 .imagenCentrada{
   margin: 5px 10px;
 }
+.tamañoFotoPagina{
+  height: 100%;
+  width: 75%;
+}
+
+.centradoImagenDetail{
+  display: flex;
+  justify-content: center;
+}
+
+.centradoDetalles{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

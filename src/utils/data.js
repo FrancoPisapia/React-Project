@@ -9,7 +9,7 @@ export const data =[
         coolorDelArmazon: 'Azul',
         estilo: 'Redondo',
         material: 'Acetato y metal',
-        precio:1200
+        precio:12000
 
     },
     {

@@ -11,8 +11,8 @@ const App = ()=>{
   return(
     <>
    <CustomNav />
-  < ItemListContainer greeting = 'Cambia tu forma de ver'/> 
-  <ItemDetailCointainer/>
+    {/*< ItemListContainer greeting = 'Cambia tu forma de ver'/> */}
+    <ItemDetailCointainer/>
     </>
     )
     
