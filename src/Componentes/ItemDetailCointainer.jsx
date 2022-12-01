@@ -1,17 +1,19 @@
 import {useState, useEffect} from 'react';
 import fetchData from '../utils/fetchData'
-import {data} from '../utils/data'
-import ItemDetail from '../Componentes/ItemDetail'
+import ItemDetail from '../Componentes/ItemDetail';
+import { useParams } from "react-router";
+const {data} = require ('../utils/data');
 
-const ItemDetailCointainer = (props) =>{
 
-    const [datos, setDatos] = useState ([])
+const ItemDetailCointainer = ({greeting}) =>{
 
+    const [dato, setDato] = useState ({})
+    const { idItem } = useParams();
 
     useEffect(()=>{
         //Consulta a la Base de dats
-        fetchData (2000, data)
-            .then(response => setDatos(response))
+        fetchData (2000, data.find (item=> item.id == idItem))
+            .then(result => setDato(result))
             .catch(err => console.log(err))
     },[])
 
@@ -19,7 +21,8 @@ const ItemDetailCointainer = (props) =>{
     return(
 
         <div className='container'>
-            <ItemDetail datos ={datos}/>
+            <h1>{greeting}</h1>
+            <ItemDetail item ={dato}/>
         </div>
 )
            

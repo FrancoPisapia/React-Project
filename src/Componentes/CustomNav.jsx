@@ -24,8 +24,8 @@ const CustomNav = () =>{
                 <Nav.Link href="#link" className='letraNegro'>Lentes de contacto</Nav.Link>
 
                 <div className='margen-der col-lg-3 letraNegro'>
-                  <Nav.Link href="#link" className='letraNegro'>Registrarse  </Nav.Link>
-                  <Nav.Link href="#link" className='letraNegro'>Iniciar Sesion</Nav.Link>
+                  <Nav.Link href="#link" className='letraNegro'>Register</Nav.Link>
+                  <Nav.Link href="#link" className='letraNegro'>Sign In</Nav.Link>
                   <div>
                   <Nav.Link href="#link" className='letraNegro'><FaShoppingCart />
                     <CartWidget />

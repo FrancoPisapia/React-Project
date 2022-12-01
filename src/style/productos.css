@@ -15,8 +15,13 @@
   justify-content: center;
 }
 
-.centradoDetalles{
+.esteticaTarjeta{
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+}
+
+.letras{
+  font-size: 22px;
 }
