@@ -3,6 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import CartWidget from './CartWidget';
 import { FaShoppingCart } from 'react-icons/fa';
+import { Link} from "react-router-dom";
 
 
 const CustomNav = () =>{
@@ -14,14 +15,14 @@ const CustomNav = () =>{
       <div className='row'>
         <Navbar bg="light" expand="lg" className='estiloNavBar'>
         <Container>
-          <Navbar.Brand href="#home" className='col-lg-4'>Óptica FG</Navbar.Brand>
+          <Navbar.Brand className='col-lg-4'> <Link to={'/'}> Óptica FG </Link></Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav"  />
 
             <Navbar.Collapse id="basic-navbar-nav" className='col-lg-6 '>
               <Nav className="me-auto">
-                <Nav.Link href="#link" className='letraNegro'>Lentes</Nav.Link>
-                <Nav.Link href="#link" className='letraNegro'>Sun</Nav.Link>
-                <Nav.Link href="#link" className='letraNegro'>Lentes de contacto</Nav.Link>
+                <Nav.Link className='letraNegro'>  <Link to={'/category/lentes'}>Lentes</Link></Nav.Link>
+                <Nav.Link className='letraNegro'><Link to={'/category/sol'}> Sun</Link></Nav.Link>
+                <Nav.Link className='letraNegro'> <Link to={'/category/contacto'}>Lentes de contacto</Link></Nav.Link>
 
                 <div className='margen-der col-lg-3 letraNegro'>
                   <Nav.Link href="#link" className='letraNegro'>Register</Nav.Link>

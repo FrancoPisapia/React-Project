@@ -18,7 +18,7 @@ const ItemListContainer = (prop) =>{
         }))
             .then(response => setDatos(response))
             .catch(err => console.log(err))
-    },[datos])
+    },[idCategoria])
 
 
     return(

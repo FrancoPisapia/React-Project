@@ -15,7 +15,7 @@ const ItemDetailCointainer = ({greeting}) =>{
         fetchData (2000, data.find (item=> item.id == idItem))
             .then(result => setDato(result))
             .catch(err => console.log(err))
-    },[])
+    },[idItem])
 
 
     return(
