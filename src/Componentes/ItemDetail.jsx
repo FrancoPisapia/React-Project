@@ -1,4 +1,4 @@
-
+import ItemCount from './ItemCount'
 const ItemDetail = ({item}) =>{
     return(
 
@@ -6,24 +6,30 @@ const ItemDetail = ({item}) =>{
         <>
           <div className="container mt-5" key={item.id}>
                 <div className="row">
-                    <div className="col-8 centradoImagenDetai">
+                    <div className="col-lg-8 centradoImagenDetail">
                 <img className="tamañoFotoPagina" src={item.src} alt={item.colorDelArmazon}/>
                     </div>
-                    <div className="col-4 esteticaTarjeta">
+                    <div className="col-lg-4 esteticaTarjeta mt-5">
                         <div>
                             <h3>{item.title} </h3>
                         </div>
                         <div className="letras">
-                            {item.marca} 
+                           <span className="negrita"> Marca: </span>{item.marca} 
                          </div>
                         <div className="letras">
-                            {item.estilo}  
+                            <span className="negrita">Estilo: </span>{item.estilo}  
                         </div>
                         <div className="letras">
-                            {item.colorDelArmazon}  
+                            <span className="negrita"> Color del armazón:</span> {item.colorDelArmazon}  
                         </div>
                         <div className="letras">
-                            ${item.precio}
+                            <span className="negrita">Material:</span> {item.material}  
+                        </div>
+                        <div className="letras">
+                            <span className="negrita">  Precio: </span>${item.precio}
+                        </div>
+                        <div className='enLinea'>
+                        <ItemCount/>
                         </div>
                     </div>
                 </div>

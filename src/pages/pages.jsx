@@ -10,7 +10,7 @@ const Home = () => {
             <Routes>
                 <Route path='/' element={<ItemListContainer greeting = 'Cambia tu forma de ver'/>} />
                 <Route path='/category/:idCategoria' element={<ItemListContainer greeting = 'Cambia tu forma de ver' />} />
-                <Route path='/item/:idItem' element={<ItemDetailCointainer greeting = 'Cambia tu forma de ver' />} />
+                <Route path='/item/:id' element={<ItemDetailCointainer greeting = 'Cambia tu forma de ver' />} />
             </Routes>
         </BrowserRouter>
 

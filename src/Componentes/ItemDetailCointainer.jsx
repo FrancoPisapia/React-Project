@@ -8,14 +8,14 @@ const {data} = require ('../utils/data');
 const ItemDetailCointainer = ({greeting}) =>{
 
     const [dato, setDato] = useState ({})
-    const { idItem } = useParams();
+    const { id } = useParams();
 
     useEffect(()=>{
         //Consulta a la Base de dats
-        fetchData (2000, data.find (item=> item.id == idItem))
+        fetchData (2000, data.find (item=> item.id == id))
             .then(result => setDato(result))
             .catch(err => console.log(err))
-    },[idItem])
+    },[id])
 
 
     return(

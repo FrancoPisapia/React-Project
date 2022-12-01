@@ -11,7 +11,7 @@ const Item = (props) =>{
           </div>
          <Card.Body>
         <Card.Title>{props.title} </Card.Title>
-        <Button variant="primary"> <Link to ={`/item/${props.id}`} >Ver Producto</Link></Button>
+        <Button variant="primary"> <Link to ={`/item/${props.id}`} className = 'linkProducto' >Ver Producto</Link></Button>
       </Card.Body>
         </Card>
 

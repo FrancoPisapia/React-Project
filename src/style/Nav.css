@@ -30,4 +30,10 @@
     font-size: 12px;
     border-radius: 50%;
   }
+
+  .linkNav{
+    text-decoration: none;
+    color: black;
+    
+  }
   

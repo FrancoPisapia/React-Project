@@ -1,3 +1,12 @@
+
+
+
+.centradoImagenDetail{
+  display: flex;
+   justify-content: space-around;
+   align-items: center;
+  }
+
 .tamañoFoto {
   height: 150px;
 }
@@ -10,10 +19,6 @@
   width: 75%;
 }
 
-.centradoImagenDetail{
-  display: flex;
-  justify-content: center;
-}
 
 .esteticaTarjeta{
   display: flex;
@@ -24,4 +29,35 @@
 
 .letras{
   font-size: 22px;
+}
+
+.linkProducto{
+  text-decoration: none;
+  color: white;
+}
+.linkProducto:hover{
+  color: cyan
+}
+
+.negrita{
+  font-weight: bold;
+}
+.enLinea{
+  display: flex;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+.textoCentrado{
+  text-align: center;
+  justify-self: center;
+  margin-top: 5px;
+}
+
+@media screen and (min-width: 992px) {
+
+  .centradoImagenDetail{
+    display: flex;
+    justify-content: center;
+  }
 }
