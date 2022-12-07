@@ -1,7 +1,8 @@
 import {useState, useEffect} from 'react';
 import Button from 'react-bootstrap/Button';
 import { FiPlus,FiMinus } from "react-icons/fi";
-const ItemCount =() =>{
+
+const ItemCount =({onAdd}) =>{
 
     const [count, setCount] = useState (0);
 
@@ -23,12 +24,18 @@ const ItemCount =() =>{
         }
     }
 
+
+
     return(
         <>
         <Button onClick={disminuir}><FiMinus/></Button>
         <h5 className='textoCentrado'>{count}</h5>
         <Button onClick={aumentar}><FiPlus/></Button>
-        <Button >Agregar al carrito</Button>
+        <Button onClick={() => onAdd()} >Agregar al carrito</Button>
+
+        
+
+        
         </>
     )
 

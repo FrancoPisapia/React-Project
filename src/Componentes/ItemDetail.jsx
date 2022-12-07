@@ -1,5 +1,15 @@
 import ItemCount from './ItemCount'
+import { Link } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
+import {useState} from 'react';
+
 const ItemDetail = ({item}) =>{
+
+    const [irAlCarrito,setIrAlCarrito] = useState(false);
+
+    const onAdd = () =>{
+        setIrAlCarrito(true)
+    }
     return(
 
 
@@ -29,7 +39,11 @@ const ItemDetail = ({item}) =>{
                             <span className="negrita">  Precio: </span>${item.precio}
                         </div>
                         <div className='enLinea'>
-                        <ItemCount/>
+                        {
+                            irAlCarrito ?
+                            <Button > <Link to={'/cart'}  className = 'linkProducto'> Ir al Carrito</Link></Button>
+                            :<ItemCount onAdd={onAdd}/>
+                        }
                         </div>
                     </div>
                 </div>

@@ -28,7 +28,7 @@ const CustomNav = () =>{
                   <Nav.Link href="#link" className='letraNegro'>Register</Nav.Link>
                   <Nav.Link href="#link" className='letraNegro'>Sign In</Nav.Link>
                   <div>
-                  <Nav.Link href="#link" className='letraNegro'><FaShoppingCart />
+                  <Nav.Link href="#link" className='letraNegro'><Link to={'/cart'} className = 'linkNav'> <FaShoppingCart /></Link>
                     <CartWidget />
                   </Nav.Link>
                   
