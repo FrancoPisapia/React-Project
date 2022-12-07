@@ -12,7 +12,7 @@ const ItemDetailCointainer = ({greeting}) =>{
 
     useEffect(()=>{
         //Consulta a la Base de dats
-        fetchData (2000, data.find (item=> item.id == id))
+        fetchData (2000, data.find (item=> item.id === parseInt(id)))
             .then(result => setDato(result))
             .catch(err => console.log(err))
     },[id])
