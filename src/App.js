@@ -9,19 +9,22 @@ import ItemDetailCointainer from "./Componentes/ItemDetailCointainer";
 import ItemListContainer from "./Componentes/ItemListContainer";
 import CustomNav from "./Componentes/CustomNav";
 import Cart from './Componentes/Cart'
+import  CartContextProvider from './Componentes/CartContex';
 
 const App = ()=>{
   return(
     <>
-        <BrowserRouter>
-            <CustomNav />
-            <Routes>
-                <Route path='/' element={<ItemListContainer greeting = 'Cambia tu forma de ver'/>} />
-                <Route path='/category/:idCategoria' element={<ItemListContainer greeting = 'Cambia tu forma de ver' />} />
-                <Route path='/item/:id' element={<ItemDetailCointainer greeting = 'Cambia tu forma de ver' />} />
-                <Route path='/cart' element={<Cart />} />
-            </Routes>
-        </BrowserRouter>
+     <CartContextProvider>
+            <BrowserRouter>
+                <CustomNav />
+                <Routes>
+                    <Route path='/' element={<ItemListContainer greeting = 'Cambia tu forma de ver'/>} />
+                    <Route path='/category/:idCategoria' element={<ItemListContainer greeting = 'Cambia tu forma de ver' />} />
+                    <Route path='/item/:id' element={<ItemDetailCointainer greeting = 'Cambia tu forma de ver' />} />
+                    <Route path='/cart' element={<Cart />} />
+                </Routes>
+            </BrowserRouter>
+        </CartContextProvider>
     </>
     )
     
