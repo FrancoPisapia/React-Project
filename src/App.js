@@ -4,6 +4,7 @@ import './App.css';
 import './style/Nav.css';
 import './style/ListaProductos.css'
 import './style/productos.css'
+import './style/Cart.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ItemDetailCointainer from "./Componentes/ItemDetailCointainer";
 import ItemListContainer from "./Componentes/ItemListContainer";

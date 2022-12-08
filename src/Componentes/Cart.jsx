@@ -1,20 +1,60 @@
 import { useContext } from "react"
-import { CartContext } from "./CartContex"
+import { Link } from "react-router-dom";
+import { CartContext } from "./CartContex";
+import Button from 'react-bootstrap/Button';
 
 const Cart = () =>{
-    const {cartList,borrarProducto} = useContext(CartContext);
+    const {cartList,borrarProducto,borrarTodo} = useContext(CartContext);
 
     return (
-        <>
-        <h1 className="container">Soy el carrito</h1> 
+        <div className="container">
+        <h1 >Tu compra</h1> 
+
+        {
+            cartList.length !==0
+            ?
+            <div className="row">
+                <div className='col-6'>
+                <Link to={'/'}><Button >Seguir Comprando</Button></Link> 
+                </div>
+                    <div className='col-6 aLaIzquierdaCart'>
+                        <Button onClick={borrarTodo}>Borrar todos</Button>
+                    </div>
+    
+             </div>
+            :  <Button className="col-2 linkProducto"> <Link to= {'/'} className='linkProducto'> Ir al catalogo</Link></Button>
+        }
+        
+
         {
             cartList.length ===0 
-            ? <div><p>Tu carrito esta vacio</p> <button>Ir al catalogo</button></div>
-            :cartList.map(item => <li key={item.id} id={item.id}>{item.title}- cantidad: {item.cantidad}- <button onClick={()=>borrarProducto(item.id)}>Borrar producto</button> </li> )
+            ? <div className="row m-2">
+                <p className="col-12 letraCarrito">Tu carrito está vacio</p>
+                </div>
+            : cartList.map(item => 
+            <>
+
+            <div className="row">
+                <li className="listaProductos" key={item.id} id={item.id}>
+                    <div className="col-3">
+                         <img className='tamañoFotoCarrito'src={item.src} alt={item.title} />
+                    </div> 
+                    <div className="col-7 letraCarrito">
+                        {item.title}
+                        cantidad: {item.cantidadItem} - Precio: $ {item.precio*item.cantidadItem}
+                    </div>  
+                    <div className="col-2">
+                            <Button onClick={()=>borrarProducto(item.id)}>Borrar producto</Button>
+                    </div> 
+                </li>
+            </div>
+            <hr />
+            
+            </>) 
 
         }
 
-        </>
+        </div>
     )
 }
 

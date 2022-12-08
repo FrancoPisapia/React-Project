@@ -1,0 +1,22 @@
+.letraCarrito{
+    font-size: 20px;
+    font-family: 'Rubik', sans-serif;
+    text-align: center;
+}
+
+.tamañoFotoCarrito{
+    height: 100%;
+    width: 100%;
+}
+
+.aLaIzquierdaCart{
+    display: flex;
+    justify-content: right;
+}
+
+@media screen and (min-width: 992px) {
+.tamañoFotoCarrito{
+    height: 100%;
+    width: 75%;
+}
+}

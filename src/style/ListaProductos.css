@@ -12,6 +12,8 @@
   gap: 20px;
 justify-content: center; 
 }
+
+
 @media screen and (min-width: 992px) {
   .separacionTarjetas {
     justify-content: stretch; 

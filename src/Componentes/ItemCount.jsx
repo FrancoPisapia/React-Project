@@ -31,7 +31,12 @@ const ItemCount =({onAdd}) =>{
         <Button onClick={disminuir}><FiMinus/></Button>
         <h5 className='textoCentrado'>{count}</h5>
         <Button onClick={aumentar}><FiPlus/></Button>
-        <Button onClick={() => onAdd(count)} >Agregar al carrito</Button>
+        {
+            count 
+            ?<Button onClick={() => onAdd(count)} >Agregar al carrito</Button>
+            :<Button disabled onClick={() => onAdd(count)} >Agregar al carrito</Button>
+        }
+        
 
         
 
