@@ -1,7 +1,7 @@
 .letraCarrito{
     font-size: 20px;
     font-family: 'Rubik', sans-serif;
-    text-align: center;
+    text-align: left;
 }
 
 .tamañoFotoCarrito{
@@ -14,9 +14,36 @@
     justify-content: right;
 }
 
+
+
+.contenderoTarjeta{
+    display: flex;
+    justify-content: center;
+}
+.tarjetaResumen{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid grey;
+}
+.margenLeft {
+    margin-left: 5px;
+}
+
+.centrarBoton{
+    display: flex;
+    justify-content: center;
+}
+
+
 @media screen and (min-width: 992px) {
 .tamañoFotoCarrito{
     height: 100%;
     width: 75%;
+}
+.tarjetaResumen{
+    position: relative;
+    width: 50%;
 }
 }

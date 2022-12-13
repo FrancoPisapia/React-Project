@@ -39,10 +39,16 @@ const Cart = () =>{
                     <div className="col-3">
                          <img className='tamañoFotoCarrito'src={item.src} alt={item.title} />
                     </div> 
-                    <div className="col-7 letraCarrito">
-                        {item.title} 
-                         cantidad: {item.cantidadItem} - Precio: $ {calcTotalPrecioCadaItem(item.id)}
-                    </div>  
+                    <div className="col-7">
+                        <div className=" row letraCarrito">
+                            <div className="col-12">
+                            {item.title} 
+                            </div>
+                            <div className="col-12">
+                            Cantidad: {item.cantidadItem} - Precio: $ {calcTotalPrecioCadaItem(item.id)}
+                            </div>
+                        </div>  
+                    </div>
                     <div className="col-2">
                             <Button onClick={()=>borrarProducto(item.id)}>Borrar producto</Button>
                     </div> 
@@ -58,12 +64,36 @@ const Cart = () =>{
 
         {
             cartList.length > 0 &&
-            <div>
-            <h3>Resumen de compra</h3>
-            <p> El precio total de tu compra es: ${calcSubtotal()}</p>
-            <p>El precio del envío es: ${ Math.round(calcSubtotal()*0.07)}</p>
-            <p> El precio total es: ${calcSubtotal()*0.07+calcSubtotal()}</p>
+            <div className="contenderoTarjeta"> 
+                <div className="tarjetaResumen">
+                    <h3>Resumen de compra</h3>
+                    <div className="row">
+                        <div className="col-10">
+                        <p> El precio total de tu compra es: </p>
+                        </div>
+                        <div className="col-2">
+                        ${calcSubtotal()}
+                        </div>
+                        <div className="col-10">
+                        <p>El precio del envío es: </p>
+                        </div>
+                        <div className="col-2">
+                        ${ Math.round(calcSubtotal()*0.07)}
+                        </div>
+                        <div className="col-10">
+                        <p> El precio total es: </p>
+                        </div>
+                        <div className="col-2">
+                        ${calcSubtotal()*0.07+calcSubtotal()}
+                        </div>
+                    </div>
+                    <div className="centrarBoton">
+                    <Button className="col-6 "> Ir a pagar</Button>
+                    </div>
+                </div>
+                
             </div>
+            
         }
         </div>
     )
