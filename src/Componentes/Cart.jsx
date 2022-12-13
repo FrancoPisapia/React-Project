@@ -4,7 +4,7 @@ import { CartContext } from "./CartContex";
 import Button from 'react-bootstrap/Button';
 
 const Cart = () =>{
-    const {cartList,borrarProducto,borrarTodo} = useContext(CartContext);
+    const {cartList,borrarProducto,borrarTodo,calcTotalPrecioCadaItem,calcSubtotal} = useContext(CartContext);
 
     return (
         <div className="container">
@@ -27,7 +27,7 @@ const Cart = () =>{
         
 
         {
-            cartList.length ===0 
+            cartList.length === 0 
             ? <div className="row m-2">
                 <p className="col-12 letraCarrito">Tu carrito está vacio</p>
                 </div>
@@ -40,8 +40,8 @@ const Cart = () =>{
                          <img className='tamañoFotoCarrito'src={item.src} alt={item.title} />
                     </div> 
                     <div className="col-7 letraCarrito">
-                        {item.title}
-                        cantidad: {item.cantidadItem} - Precio: $ {item.precio*item.cantidadItem}
+                        {item.title} 
+                         cantidad: {item.cantidadItem} - Precio: $ {calcTotalPrecioCadaItem(item.id)}
                     </div>  
                     <div className="col-2">
                             <Button onClick={()=>borrarProducto(item.id)}>Borrar producto</Button>
@@ -49,11 +49,22 @@ const Cart = () =>{
                 </li>
             </div>
             <hr />
-            
-            </>) 
-
+            </>
+             
+             ) 
+           
         }
 
+
+        {
+            cartList.length > 0 &&
+            <div>
+            <h3>Resumen de compra</h3>
+            <p> El precio total de tu compra es: ${calcSubtotal()}</p>
+            <p>El precio del envío es: ${ Math.round(calcSubtotal()*0.07)}</p>
+            <p> El precio total es: ${calcSubtotal()*0.07+calcSubtotal()}</p>
+            </div>
+        }
         </div>
     )
 }

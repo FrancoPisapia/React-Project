@@ -1,10 +1,24 @@
+import { CartContext } from "./CartContex"
+import { useContext } from "react"
 
 
 
 const CartWidget = () =>{
-    let productosEnCarro =3
+    const contextoCart = useContext(CartContext);
+   
+    let productosEnCarro =(contextoCart.calcularTotalItems())
+    /* let total = 0
+    cartList.forEach(element => {
+        console.log(total += element.cantidadItem )
+        
+    });*/
     return(
-        <div className='popup'>{productosEnCarro}</div>
+        <>
+        {productosEnCarro !==0
+        ?<div className='popup'>{productosEnCarro}</div>
+        :<div></div>
+        }
+        </>
     )
 }
 

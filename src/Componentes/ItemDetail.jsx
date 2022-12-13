@@ -11,6 +11,7 @@ const ItemDetail = ({item}) =>{
     const{agregarAlCarrito} = useContext(CartContext)
 
     const onAdd = (cantidad) =>{
+        //alert(`Se agregaron ${cantidad} de unidades`)
         setIrAlCarrito(true)
         //Ejecutar la funcion global para agregar el producto al carrito
         agregarAlCarrito (item,cantidad);
