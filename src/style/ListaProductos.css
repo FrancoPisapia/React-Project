@@ -12,6 +12,12 @@
   gap: 20px;
 justify-content: center; 
 }
+.centado{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100vh;
+}
 
 
 @media screen and (min-width: 992px) {
