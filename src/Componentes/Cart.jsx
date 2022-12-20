@@ -12,6 +12,7 @@ import Swal from 'sweetalert2'
 const Cart = () =>{
     //const {cartList,borrarProducto,borrarTodo,calcTotalPrecioCadaItem,calcSubtotal} = useContext(CartContext);
     const contextoCart = useContext(CartContext);
+
     const createOrder = () =>{
         const order = {
             comprador: {
@@ -70,7 +71,7 @@ const Cart = () =>{
                 <div className='col-6'>
                 <Link to={'/'}><Button >Seguir Comprando</Button></Link> 
                 </div>
-                    <div className='col-6 aLaIzquierdaCart'>
+                    <div className='col-6 aLaIzquierdaCart mt-2 mb-2'>
                         <Button onClick={contextoCart.borrarTodo}>Borrar todos</Button>
                     </div>
     
@@ -85,10 +86,10 @@ const Cart = () =>{
                 <p className="col-12 letraCarrito">Tu carrito está vacio</p>
                 </div>
             : contextoCart.cartList.map(item => 
-            <>
-
-            <div className="row">
-                <li className="listaProductos" key={item.id} id={item.id}>
+           
+            
+            <div className="row" id={item.id} key={item.id} >
+                <li className="listaProductos">
                     <div className="col-lg-3 col-2">
                          <img className='tamañoFotoCarrito'src={item.src} alt={item.title} />
                     </div> 
@@ -106,9 +107,10 @@ const Cart = () =>{
                             <Button onClick={()=>contextoCart.borrarProducto(item.id)}>Borrar producto</Button>
                     </div> 
                 </li>
+                <div className="bordeDiv"></div>
             </div>
-            <hr />
-            </>
+           
+          
              
              ) 
            

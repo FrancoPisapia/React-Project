@@ -2,24 +2,23 @@ import {useState, useEffect} from 'react';
 import Button from 'react-bootstrap/Button';
 import { FiPlus,FiMinus } from "react-icons/fi";
 
-const ItemCount =({onAdd}) =>{
+const ItemCount =({ stock=0,initial =1, onAdd}) =>{
 
     const [count, setCount] = useState (0);
 
-    const initial =0
     //componentDidMount
     useEffect(() => {
         setCount(initial);
     },[]);
 
     const aumentar = () =>{
-        if (count>=0){
+        if (count<stock){
             setCount (count+1)
         }
     }
 
     const disminuir = () =>{
-        if (count>0){
+        if (count>initial+1){
             setCount (count-1)
         }
     }
@@ -32,7 +31,7 @@ const ItemCount =({onAdd}) =>{
         <h5 className='textoCentrado'>{count}</h5>
         <Button onClick={aumentar}><FiPlus/></Button>
         {
-            count 
+            count && stock
             ?<Button onClick={() => onAdd(count)} >Agregar al carrito</Button>
             :<Button disabled onClick={() => onAdd(count)} >Agregar al carrito</Button>
         }

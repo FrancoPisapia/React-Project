@@ -52,7 +52,7 @@ const ItemDetail = ({item}) =>{
                         {
                             irAlCarrito ?
                             <Button > <Link to={'/cart'}  className = 'linkProducto'> Ir al Carrito</Link></Button>
-                            :<ItemCount onAdd={onAdd}/>
+                            :<ItemCount stock={item.stock} initial={irAlCarrito} onAdd={onAdd}/>
                         }
                         </div>
                     </div>

@@ -20,17 +20,19 @@ const CustomNav = () =>{
 
             <Navbar.Collapse id="basic-navbar-nav" className='col-lg-6 '>
               <Nav className="me-auto">
-                <Nav.Link className='letraNegro'>  <Link to={'/category/lentes'} className = 'linkNav'>Lentes</Link></Nav.Link>
-                <Nav.Link className='letraNegro'><Link to={'/category/sol'}  className = 'linkNav'> Sun</Link></Nav.Link>
-                <Nav.Link className='letraNegro'> <Link to={'/category/contacto'}  className = 'linkNav'>Lentes de contacto</Link></Nav.Link>
+                <div className='linksNav'>
+                <Link to={'/category/lentes'} className = 'linkNav'>Lentes</Link>
+                <Link to={'/category/sol'}  className = 'linkNav'> Sun</Link>
+                <Link to={'/category/contacto'}  className = 'linkNav'>Lentes de contacto</Link>
+                </div>
 
                 <div className='margen-der col-lg-3 letraNegro'>
-                  <Nav.Link href="#link" className='letraNegro'>Register</Nav.Link>
-                  <Nav.Link href="#link" className='letraNegro'>Sign In</Nav.Link>
+                  <Link to={'#'} className='letraNegro linkNav'>Register</Link>
+                  <Link to={'#'} className='letraNegro linkNav'>Sign In</Link>
                   <div>
-                  <Nav.Link href="#link" className='letraNegro'><Link to={'/cart'} className = 'linkNav'> <FaShoppingCart /></Link>
+                  <Link to={'/cart'} className = 'linkNav'> <FaShoppingCart /></Link>
                     <CartWidget />
-                  </Nav.Link>
+                  
                   
                   </div>
                 </div>

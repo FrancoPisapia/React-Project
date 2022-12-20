@@ -15,7 +15,12 @@
 }
 
 
-
+.bordeDiv{
+    border: 1px solid gray;
+    border-color: rgba(128, 128, 128,0.4);
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
 .contenderoTarjeta{
     display: flex;
     justify-content: space-around;
@@ -28,6 +33,7 @@
     justify-content: space-around;
     flex-direction: column;
     border: 2px solid grey;
+    border-color: rgba(128, 128, 128,0.4);
 }
 .margenLeft {
     margin-left: 5px;
