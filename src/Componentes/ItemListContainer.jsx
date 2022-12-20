@@ -1,8 +1,7 @@
 import {useState, useEffect} from 'react';
 import ItemList from './ItemList'
-import fetchData from '../utils/fetchData'
-import {data} from '../utils/data' 
 import { useParams } from 'react-router-dom';
+import {fetchFromFirestore} from '../utils/firebaseFetch'
 
 const ItemListContainer = (prop) =>{
 
@@ -11,14 +10,12 @@ const ItemListContainer = (prop) =>{
 
     //componentDidUpdate
     useEffect(()=>{
-        //Consulta a la Base de dats
-        fetchData (2000, data.filter(item =>{
-            if(idCategoria === undefined) return item;
-            return item.categoria === (idCategoria)
-        }))
-            .then(response => setDatos(response))
-            .catch(err => console.log(err))
+
+    fetchFromFirestore(idCategoria)
+        .then(result => setDatos(result))
+        .catch(err => console.log(err))
     },[idCategoria])
+
 
 
     return(

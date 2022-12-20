@@ -9,7 +9,8 @@ export const data =[
         colorDelArmazon: 'Azul',
         estilo: 'Redondo',
         material: 'Acetato y metal',
-        precio:12000
+        precio:12000,
+        stock: 45
 
     },
     {
@@ -22,7 +23,8 @@ export const data =[
         colorDelArmazon: 'Transparente',
         estilo: 'Redondo',
         material: 'Acetato y metal',
-        precio:15000
+        precio:15000,   
+        stock: 75
 
     },
     {
@@ -35,7 +37,8 @@ export const data =[
         colorDelArmazon: 'Azul y verde petroleo',
         estilo: 'Rectangular',
         material: 'Acetato y metal',
-        precio: 14000
+        precio: 14000,
+        stock:22
 
     },
     {
@@ -48,7 +51,8 @@ export const data =[
         colorDelArmazon: 'Negro',
         estilo: 'Rectangular',
         material: 'Acetato y metal',
-        precio:22000
+        precio:22000,
+        stock:16
 
     },
     {
@@ -61,7 +65,8 @@ export const data =[
         colorDelArmazon: 'Negro mate',
         estilo: 'Rectangular',
         material: 'Acetato',
-        precio:9000
+        precio:9000,
+        stock:41
 
     },
     {
@@ -74,7 +79,8 @@ export const data =[
         colorDelArmazon: 'Negro mate',
         estilo: 'Redondos',
         material: 'Acetato',
-        precio:7500
+        precio:7500,
+        stock:124
 
     },
     {
@@ -87,7 +93,8 @@ export const data =[
         colorDelArmazon: 'Negro ',
         estilo: 'Rectangular',
         material: 'Acetato y metal',
-        precio:15000
+        precio:15000,
+        stock:25
         
     },
     {
@@ -100,7 +107,8 @@ export const data =[
         colorDelArmazon: 'Dorado ',
         estilo: 'Aviador',
         material: 'Metal',
-        precio:22000
+        precio:22000,
+        stock:12
 
     },
     {
@@ -113,7 +121,8 @@ export const data =[
         colorDelArmazon: '',
         estilo: '',
         material: 'Silicona',
-        precio:8000
+        precio:8000,
+        stock:125
 
     },
     {
@@ -126,7 +135,8 @@ export const data =[
         colorDelArmazon: '',
         estilo: '',
         material: 'Silicona',
-        precio:5000
+        precio:5000,
+        stock:80
 
     },
 ]

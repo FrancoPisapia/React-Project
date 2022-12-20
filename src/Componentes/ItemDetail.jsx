@@ -45,6 +45,9 @@ const ItemDetail = ({item}) =>{
                         <div className="letras">
                             <span className="negrita">  Precio: </span>${item.precio}
                         </div>
+                        <div className="letras">
+                            <span className="negrita">  Stock: </span>{item.stock}
+                        </div>
                         <div className='enLinea'>
                         {
                             irAlCarrito ?

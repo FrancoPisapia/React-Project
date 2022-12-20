@@ -2,10 +2,63 @@ import { useContext } from "react"
 import { Link } from "react-router-dom";
 import { CartContext } from "./CartContex";
 import Button from 'react-bootstrap/Button';
+import { serverTimestamp, setDoc,collection,doc,updateDoc,increment} from "firebase/firestore";
+import {db} from '../utils/firebaseCinfig';
+import Swal from 'sweetalert2'
+
+
+
 
 const Cart = () =>{
     //const {cartList,borrarProducto,borrarTodo,calcTotalPrecioCadaItem,calcSubtotal} = useContext(CartContext);
     const contextoCart = useContext(CartContext);
+    const createOrder = () =>{
+        const order = {
+            comprador: {
+                name: 'Leo Messi',
+                email: 'asdasd@gmai.com',
+                tel: '524855465'
+                
+        },
+            date: serverTimestamp(),
+            item: contextoCart.cartList.map(item => ({
+                id:item.id,
+                title:item.title,
+                price:item.precio,
+                quantity:item.cantidadItem
+            })),
+            total:contextoCart.calcTotalConEnvio()
+    }
+    console.log(order)
+
+    const createOrderInFirestor = async() =>{
+        const newOrederRef = doc (collection (db, 'orders'));
+        await setDoc (newOrederRef,order)
+        return newOrederRef
+    }
+
+    createOrderInFirestor()
+        .then(result => {
+            Swal.fire({
+                icon: 'success',
+                title: 'Tu compra fue realizada con exito',
+                text: `Tu orden ${result.id} ha sido creada`,
+              })
+            //actualizar el stock de productos comprados
+            contextoCart.cartList.forEach(async(item) => {
+            const itemRef = doc(db,'productos',item.id);
+            await updateDoc (itemRef,{
+                //stock - item.cantidad
+                stock:increment(-item.cantidadItem)
+                })
+            });
+            //Vaciar el carrito
+            contextoCart.borrarTodo();
+        })
+        .catch (err => console.log(err) )
+
+    }
+
     return (
         <div className="container">
         <h1 >Tu compra</h1> 
@@ -78,17 +131,17 @@ const Cart = () =>{
                         <p>El precio del envío es: </p>
                         </div>
                         <div className="col-2">
-                        ${ Math.round(contextoCart.calcSubtotal()*0.07)}
+                        ${ contextoCart.calcEnvio()}
                         </div>
                         <div className="col-10">
                         <p> El precio total es: </p>
                         </div>
                         <div className="col-2">
-                        ${contextoCart.calcSubtotal()*0.07+contextoCart.calcSubtotal()}
+                        ${contextoCart.calcTotalConEnvio()}
                         </div>
                     </div>
                     <div className="centrarBoton mb-2">
-                    <Button className="col-6 "> Ir a pagar</Button>
+                    <Button className="col-6 " onClick={createOrder}> Ir a pagar</Button>
                     </div>
                 </div>
                 

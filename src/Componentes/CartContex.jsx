@@ -55,9 +55,18 @@ const CartContextProvider = ({children}) =>{
         valorAnterior + valorActual)
     }
 
+    const calcEnvio= () =>{
+        let totalEnvio =  Math.round(calcSubtotal()*0.07)
+        return totalEnvio
+    }
+    const calcTotalConEnvio = ()=>{
+        let totalFinal = calcEnvio() + calcSubtotal();
+        return totalFinal
+    }
+
 
     return(
-        <CartContext.Provider value={{cartList, agregarAlCarrito, borrarProducto,borrarTodo,calcularTotalItems,calcTotalPrecioCadaItem ,calcSubtotal  }}>
+        <CartContext.Provider value={{cartList, agregarAlCarrito, borrarProducto,borrarTodo,calcularTotalItems,calcTotalPrecioCadaItem ,calcSubtotal,calcEnvio,calcTotalConEnvio }}>
             {children}
         </CartContext.Provider>
     )

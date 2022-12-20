@@ -1,8 +1,7 @@
 import {useState, useEffect} from 'react';
-import fetchData from '../utils/fetchData'
 import ItemDetail from '../Componentes/ItemDetail';
 import { useParams } from "react-router";
-const {data} = require ('../utils/data');
+import {fetchOneFromFireStore} from '../utils/firebaseFetch'
 
 
 const ItemDetailCointainer = ({greeting}) =>{
@@ -11,10 +10,11 @@ const ItemDetailCointainer = ({greeting}) =>{
     const { id } = useParams();
 
     useEffect(()=>{
-        //Consulta a la Base de dats
-        fetchData (2000, data.find (item=> item.id === parseInt(id)))
+
+            fetchOneFromFireStore(id)
             .then(result => setDato(result))
             .catch(err => console.log(err))
+
     },[id])
 
 
