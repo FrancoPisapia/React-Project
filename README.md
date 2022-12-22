@@ -8,21 +8,21 @@ Spy Franco Pisapia y este es el proyecto final del curso de ReactJS realizado en
 
 ### Instalación 🔧
 
-_Para ejecutar el código se debe 
+Para ejecutar el código se debe 
 
-_Clonar el repositorio en la pc
+*Clonar el repositorio en la pc
 
 ```
 git clone https://github.com/FrancoPisapia/React-Project.git
 ```
 
-_Instalar el node modules del proyecto
+*Instalar el node modules del proyecto
 
 ```
 npm i
 ```
 
-_Una vez instalado ejecutar el comando
+*Una vez instalado ejecutar el comando
 
 ```
 npm start
