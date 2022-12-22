@@ -18,7 +18,7 @@
   
 .linksNav{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   gap: 10px;
 }
@@ -44,3 +44,9 @@
     
   }
   
+
+  @media screen and (min-width: 992px) {
+    .linksNav{
+      flex-direction: row;
+    }
+  }

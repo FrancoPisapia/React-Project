@@ -45,7 +45,6 @@ const CartContextProvider = ({children}) =>{
 
     const calcTotalPrecioCadaItem = (id)=>{
         let totalCadaItem = cartList.map(item => item.id).indexOf(id);
-        //console.log (cartList[totalCadaItem])
         return cartList[totalCadaItem].precio*cartList[totalCadaItem].cantidadItem
     }
 
@@ -72,4 +71,4 @@ const CartContextProvider = ({children}) =>{
     )
 }
 
-export default CartContextProvider
+export default CartContextProvider;

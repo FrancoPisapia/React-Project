@@ -49,4 +49,4 @@ const CustomNav = () =>{
     )
 }
 
-export default CustomNav
+export default CustomNav;

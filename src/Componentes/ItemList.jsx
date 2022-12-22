@@ -1,4 +1,4 @@
-import Item from './Item'
+import Item from './Item';
 import Spinner from 'react-bootstrap/Spinner';
 const ItemList = (props) =>{
     return(
@@ -12,4 +12,4 @@ const ItemList = (props) =>{
     )
 }
 
-export default ItemList
+export default ItemList;

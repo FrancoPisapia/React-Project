@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
 import {useState} from 'react';
 import { useContext } from 'react';
 import { CartContext } from './CartContex';
+import Swal from 'sweetalert2'
 
 const ItemDetail = ({item}) =>{
 
@@ -11,8 +12,12 @@ const ItemDetail = ({item}) =>{
     const{agregarAlCarrito} = useContext(CartContext)
 
     const onAdd = (cantidad) =>{
-        //alert(`Se agregaron ${cantidad} de unidades`)
-        setIrAlCarrito(true)
+        Swal.fire({
+            icon: 'success',
+            title: 'Se agregó el item al carrito',
+            text: `Se agregaron ${cantidad} de unidades`,
+          })
+        setIrAlCarrito(true);
         //Ejecutar la funcion global para agregar el producto al carrito
         agregarAlCarrito (item,cantidad);
 

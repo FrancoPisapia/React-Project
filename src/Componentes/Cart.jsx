@@ -10,7 +10,6 @@ import Swal from 'sweetalert2'
 
 
 const Cart = () =>{
-    //const {cartList,borrarProducto,borrarTodo,calcTotalPrecioCadaItem,calcSubtotal} = useContext(CartContext);
     const contextoCart = useContext(CartContext);
 
     const createOrder = () =>{
@@ -30,7 +29,6 @@ const Cart = () =>{
             })),
             total:contextoCart.calcTotalConEnvio()
     }
-    console.log(order)
 
     const createOrderInFirestor = async() =>{
         const newOrederRef = doc (collection (db, 'orders'));
@@ -154,4 +152,4 @@ const Cart = () =>{
     )
 }
 
-export default Cart
+export default Cart;

@@ -27,6 +27,11 @@
 
 }
 
+
+.card:hover {
+  transform: scale(1.05,1.05);
+}
+
 .letras{
   font-size: 22px;
 }

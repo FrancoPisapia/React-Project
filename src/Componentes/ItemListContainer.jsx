@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 import ItemList from './ItemList'
 import { useParams } from 'react-router-dom';
-import {fetchFromFirestore} from '../utils/firebaseFetch'
+import {fetchFromFirestore} from '../utils/firebaseFetch';
 
 const ItemListContainer = (prop) =>{
 
