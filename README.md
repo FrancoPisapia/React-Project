@@ -5,7 +5,6 @@ Spy Franco Pisapia y este es el proyecto final del curso de ReactJS realizado en
 ## Capturas 🚀 
 ![Imgur](http://drive.google.com/uc?export=view&id=1RDilKT_tE617_MGp05_u6ZAPul7OaPK2)
 
-Cancel changes
 
 ### Instalación 🔧
 
