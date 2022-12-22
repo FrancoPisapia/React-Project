@@ -3,7 +3,10 @@
 Spy Franco Pisapia y este es el proyecto final del curso de ReactJS realizado en Coderhouse. Este consiste en un ecommerce de una óptica.
 
 ## Capturas 🚀 
-![Imgur](http://drive.google.com/uc?export=view&id=1RDilKT_tE617_MGp05_u6ZAPul7OaPK2)
+
+![Imgur](http://drive.google.com/uc?export=view&id=1A5tulg2Hn-uasYcE5tE2PTdmY7nWsflu)
+![Imgur](http://drive.google.com/uc?export=view&id=1QYvPINcr3OFYSjubTU6it6CAgE3C14ss)
+![Imgur](http://drive.google.com/uc?export=view&id=10E4ygJOCd0HerzXJBaU5yrOVvmX7RVZv)
 
 
 ### Instalación 🔧
