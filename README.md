@@ -5,55 +5,33 @@ Spy Franco Pisapia y este es el proyecto final del curso de ReactJS realizado en
 ## Capturas 🚀 
 ![Imgur](http://drive.google.com/uc?export=view&id=1RDilKT_tE617_MGp05_u6ZAPul7OaPK2)
 
-### Pre-requisitos 📋
-
-_Que cosas necesitas para instalar el software y como instalarlas_
-
-```
-Da un ejemplo
-```
+Cancel changes
 
 ### Instalación 🔧
 
-_Una serie de ejemplos paso a paso que te dice lo que debes ejecutar para tener un entorno de desarrollo ejecutandose_
+_Para ejecutar el código se debe 
 
-_Dí cómo será ese paso_
-
-```
-Da un ejemplo
-```
-
-_Y repite_
+_Clonar el repositorio en la pc
 
 ```
-hasta finalizar
+git clone https://github.com/FrancoPisapia/React-Project.git
 ```
 
-_Finaliza con un ejemplo de cómo obtener datos del sistema o como usarlos para una pequeña demo_
-
-## Ejecutando las pruebas ⚙️
-
-_Explica como ejecutar las pruebas automatizadas para este sistema_
-
-### Analice las pruebas end-to-end 🔩
-
-_Explica que verifican estas pruebas y por qué_
+_Instalar el node modules del proyecto
 
 ```
-Da un ejemplo
+npm i
 ```
 
-### Y las pruebas de estilo de codificación ⌨️
-
-_Explica que verifican estas pruebas y por qué_
+_Una vez instalado ejecutar el comando
 
 ```
-Da un ejemplo
+npm start
 ```
+Y listo
 
-## Despliegue 📦
 
-_Agrega notas adicionales sobre como hacer deploy_
+
 
 ## Construido con 🛠️
 
@@ -67,16 +45,7 @@ Para ejecutar este proyecto se utilizó
 
 ## Autores ✒️
 
-_Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios_
 
-* **Franco Pisapia** - *Trabajo Inicial* - [villanuevand](https://github.com/villanuevand)
+* **Franco Pisapia** - *Trabajo Inicial* - [FrancoPisapia](https://github.com/FrancoPisapia)
 
-
-También puedes mirar la lista de todos los [contribuyentes](https://github.com/your/project/contributors) quíenes han participado en este proyecto. 
-
-
-## Expresiones de Gratitud 🎁
-
-* Comenta a otros sobre este proyecto 📢
-* Invita una cerveza 🍺 o un café ☕ a alguien del equipo. 
 * ¡Gracias por su atención!
