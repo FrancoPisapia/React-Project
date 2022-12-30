@@ -11,6 +11,8 @@ import ItemListContainer from "./Componentes/ItemListContainer";
 import CustomNav from "./Componentes/CustomNav";
 import Cart from './Componentes/Cart'
 import  CartContextProvider from './Componentes/CartContex';
+import Login from './Componentes/Login'
+import Register from './Componentes/Register'
 
 const App = ()=>{
   return(
@@ -23,6 +25,8 @@ const App = ()=>{
                     <Route path='/category/:idCategoria' element={<ItemListContainer greeting = 'Cambia tu forma de ver' />} />
                     <Route path='/item/:id' element={<ItemDetailCointainer greeting = 'Cambia tu forma de ver' />} />
                     <Route path='/cart' element={<Cart />} />
+                    <Route path='/login' element={<Login />} />
+                    <Route path='/register' element={<Register />} />
                 </Routes>
             </BrowserRouter>
         </CartContextProvider>

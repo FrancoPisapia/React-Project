@@ -4,9 +4,18 @@ import Navbar from 'react-bootstrap/Navbar';
 import CartWidget from './CartWidget';
 import { FaShoppingCart } from 'react-icons/fa';
 import { Link} from "react-router-dom";
-
+import { auth } from '../utils/firebaseCinfig'
+import { useContext,useState} from "react"
+//import{loginContext } from './Login'
+import {onAuthStateChanged} from "firebase/auth";
 
 const CustomNav = () =>{
+
+  const[user, setUser] = useState({})
+
+  onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser)
+  })
 
     return(
 
@@ -27,8 +36,12 @@ const CustomNav = () =>{
                 </div>
 
                 <div className='margen-der col-lg-3 letraNegro'>
-                  <Link to={'#'} className='letraNegro linkNav'>Register</Link>
-                  <Link to={'#'} className='letraNegro linkNav'>Sign In</Link>
+                <Link to={'/register'} className='letraNegro linkNav'>Register</Link>
+                  {user?.email
+                  ? user?.email
+                  : <Link to={'/login'} className='letraNegro linkNav'>Log In</Link>}
+                  
+                  
                   <div>
                   <Link to={'/cart'} className = 'linkNav'> <FaShoppingCart /></Link>
                     <CartWidget />
