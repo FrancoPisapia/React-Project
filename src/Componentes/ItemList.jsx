@@ -6,7 +6,7 @@ const ItemList = (props) =>{
         {
             props.datos.length>0
             ?props.datos.map(item => <Item key={item.id}  id={item.id} title ={item.title} src={item.src}/>)
-            :<div className='centado'> <Spinner animation="border" variant="primary" /></div>
+            :<div className='centrado'> <Spinner animation="border" variant="primary" /></div>
         }
         </>
     )

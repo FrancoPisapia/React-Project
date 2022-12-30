@@ -13,6 +13,7 @@ import Cart from './Componentes/Cart'
 import  CartContextProvider from './Componentes/CartContex';
 import Login from './Componentes/Login'
 import Register from './Componentes/Register'
+import './style/registrarse.css'
 
 const App = ()=>{
   return(

@@ -1,21 +1,21 @@
 import React from 'react'
-import { createUserWithEmailAndPassword,onAuthStateChanged, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword} from "firebase/auth";
 import { auth } from '../utils/firebaseCinfig'
 import {useState} from 'react';
 import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+
 
 const Register = () => {
+
     
     const [registerEmail,setRegisterEmail] = useState('');
     const [registerUsuario,setRegisterUsuario] = useState('')
     const [registerContrasenia,setRegisterContrasenia] = useState('')
+    const [registerContrasenia2,setRegisterContrasenia2] = useState('')
 
 
-    const[user, setUser] = useState({})
 
-    onAuthStateChanged(auth, (currentUser) => {
-        setUser(currentUser)
-    })
     const registrarse = async() =>{
         try {
             const user = await createUserWithEmailAndPassword(
@@ -30,35 +30,49 @@ const Register = () => {
     }
     }
 
-    const logOut = async() =>{
-        await signOut(auth)
-    }
+
 
 
   return (
     <>
-    <form>
-    <div>
-        <label htmlFor="nombre"> Nombre de Usuario</label>
-        <input type="text" id="nombre" onChange={(event) => setRegisterUsuario(event.target.value)} />
-    </div>
+    <div className='centrado2'>
+        <Card className='mt-5 formaCartaRegistroEInicioSesion'>
+      <Card.Header as="h5">Registarse</Card.Header>
+      <Card.Body>
+        <Card.Text>
+            <form className='formaCartaRegistroEInicioSesion'>
+                <div className='mt-3'> 
+                    <label htmlFor="nombre" > Nombre de Usuario</label>
+                    <input type="text" id="nombre" className='col-11' onChange={(event) => setRegisterUsuario(event.target.value)} />
+                </div>
+                <div className='mt-3'>
+                    <label htmlFor="email" className='col-12'> Email</label>
+                    <input type="email" id="email" className='col-11' onChange={(event) => setRegisterEmail(event.target.value)} />
+                </div>
 
-    <div>
-        <label htmlFor="email"> email</label>
-        <input type="email" id="email" onChange={(event) => setRegisterEmail(event.target.value)} />
-    </div>
+                <div className='mt-3'>
+                    <label htmlFor="password" className='col-12'> Contraseña</label>
+                    <input type="password" id="password" className='col-11' onChange={(event) => setRegisterContrasenia(event.target.value)}  />
+                </div>
+                <div className='mt-3'>
+                    <label htmlFor="password" className='col-12'> Verificar Contraseña</label>
+                    <input type="password" id="password"  className='col-11' onChange={(event) => setRegisterContrasenia2(event.target.value)}  />
+                </div>
+                {
 
-    <div>
-        <label htmlFor="password"> Contraseña</label>
-        <input type="password" id="password" onChange={(event) => setRegisterContrasenia(event.target.value)}  />
-    </div>
+                    registerContrasenia === registerContrasenia2
+                    ?<div className='centrado2'> <Button className='mt-3'  onClick={registrarse}>Registrarse</Button></div>
+                    : <div>Las contraseñas no coinciden</div>
+                }
+                
+            </form>
+        </Card.Text>
 
-    <Button onClick={registrarse}>
-    Registrarse
-    </Button>
-</form>
-<h4>Beinvenido {user?.email}</h4>
-<Button onClick={logOut}>Cerrar sesión</Button>
+
+
+      </Card.Body>
+    </Card>
+    </div>
 </>
 
   )

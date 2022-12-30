@@ -7,15 +7,19 @@ import { Link} from "react-router-dom";
 import { auth } from '../utils/firebaseCinfig'
 import { useContext,useState} from "react"
 //import{loginContext } from './Login'
-import {onAuthStateChanged} from "firebase/auth";
+import {onAuthStateChanged,signOut} from "firebase/auth";
 
 const CustomNav = () =>{
 
-  const[user, setUser] = useState({})
+      const[user, setUser] = useState({})
 
-  onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser)
-  })
+      onAuthStateChanged(auth, (currentUser) => {
+          setUser(currentUser)
+      })
+
+      const logOut = async() =>{
+        await signOut(auth)
+    }
 
     return(
 
@@ -36,10 +40,16 @@ const CustomNav = () =>{
                 </div>
 
                 <div className='margen-der col-lg-3 letraNegro'>
-                <Link to={'/register'} className='letraNegro linkNav'>Register</Link>
+
                   {user?.email
-                  ? user?.email
-                  : <Link to={'/login'} className='letraNegro linkNav'>Log In</Link>}
+                  ?<Link onClick={logOut} className='linkNav'>Cerrar sesión</Link>
+                  :<Link to={'/register'} className='letraNegro linkNav'>Register</Link>
+                  }
+                
+                  {user?.email
+                  ? user.email
+                  : <Link to={'/login'} className='letraNegro linkNav'>Log In</Link>
+                  }
                   
                   
                   <div>
@@ -53,11 +63,11 @@ const CustomNav = () =>{
               </Nav>
 
             </Navbar.Collapse>
-
+            
         </Container>
       </Navbar>
       </div>
-      
+
       </>
     )
 }

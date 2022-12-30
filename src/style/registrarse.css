@@ -1,0 +1,12 @@
+.centrado2{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 1%;
+
+  }
+  .formaCartaRegistroEInicioSesion{
+    width: 300px;
+    height: 100%;
+    
+  }
